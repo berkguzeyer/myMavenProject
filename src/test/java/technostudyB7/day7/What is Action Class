@@ -1,0 +1,7 @@
+What is Actions class?
+A class we us for special actions.
+
+Example: hover over, double click, hold an element, right click, drag & drop, control keyboard buttons etc.
+
+How to use it?
+Create an object inside the Actions class.
