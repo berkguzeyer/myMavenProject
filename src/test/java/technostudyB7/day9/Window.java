@@ -19,7 +19,7 @@ public class Window extends UtilityClass {
 
         String mainPageId = driver.getWindowHandle(); // We are getting the ID of the Main Page
 
-        WebElement registerNowButton = driver.findElement(By.cssSelector("a[href='https://seleniumconf.com/']"));
+        WebElement registerNowButton = driver.findElement(By.xpath("//a[text()='Get Tickets']"));
         registerNowButton.click();
 
         Set<String> allIds = driver.getWindowHandles();
@@ -31,6 +31,11 @@ public class Window extends UtilityClass {
         }
 
         System.out.println(driver.getTitle());
+
+        driver.close(); // We closed the active window, which is `get tickets/register`
+
+        driver.switchTo().window(mainPageId); // Now we are switching back to the main page by using its id
+        System.out.println(driver.getTitle()); // getting main/active page's title
 
 
     }
